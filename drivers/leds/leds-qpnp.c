@@ -2678,10 +2678,10 @@ static void led_blink(struct qpnp_led_data *led,
            	    led->cdev.brightness = 51;
             else
                 led->cdev.brightness = 0;
-        	if (led->in_order_command_processing)
-        		queue_work(led->workqueue, &led->work);
-        	else
-        		schedule_work(&led->work);
+        if (led->in_order_command_processing)
+        	queue_work(led->workqueue, &led->work);
+        else
+        	schedule_work(&led->work);
         }
 
     }
