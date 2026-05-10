@@ -394,12 +394,12 @@ static ssize_t goodix_SMWP_write(struct file *file, const char *buff,
 			ts->SMWP_enable = 1;
 		else
 			return -EINVAL;
-			if (ts->SMWP_enable == 0){
-				for (i=0;i<8;i++)
-				{
-					ts->gesture_cust_en[i]= 0;
-				}
-			} 
+		if (ts->SMWP_enable == 0){
+			for (i=0;i<8;i++)
+			{
+				ts->gesture_cust_en[i]= 0;
+			}
+		} 
 		printk("%s: SMART_WAKEUP_enable = %d.\n", __func__, ts->SMWP_enable);
 	
 		return len;
